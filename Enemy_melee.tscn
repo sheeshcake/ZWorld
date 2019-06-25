@@ -1,0 +1,28 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Enemy_melee.gd" type="Script" id=1]
+[ext_resource path="res://icon.png" type="Texture" id=2]
+
+[sub_resource type="RectangleShape2D" id=1]
+
+[node name="Enemy_melee" type="KinematicBody2D"]
+collision_layer = 4
+collision_mask = 3
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="."]
+scale = Vector2( 0.75, 0.75 )
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2( 2, 2 )
+shape = SubResource( 1 )
+
+[node name="Visibility" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Visibility"]
+[connection signal="body_entered" from="Visibility" to="." method="_on_Visibility_body_entered"]
+[connection signal="body_exited" from="Visibility" to="." method="_on_Visibility_body_exited"]
