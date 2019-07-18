@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Player_Bullet.gd" type="Script" id=1]
+
+[node name="Player_Bullet" type="Area2D"]
+script = ExtResource( 1 )
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+polygon = PoolVector2Array( 5.24401, -0.51266, 4.79529, -1.94858, 3.35937, -3.29475, 1.47473, -3.38449, -3.10226, -4.10245, -6.42282, -3.47424, -4.89716, -2.93577, -9.74338, -1.67934, -6.7818, -1.5896, -11.269, -0.153681, -5.52537, 0.295044, -9.74338, 2.53866, -4.08945, 2.26943, -4.53818, 4.69254, -0.409912, 3.34637, 0.0388107, 4.96177, 3.09014, 1.91045, 5.33376, 0.295044 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PoolVector2Array( 3.17988, -3.65373, -3.28175, -4.46143, -9.11516, -3.02552, -11.987, -0.243425, -10.4613, 2.44892, -5.97409, 4.96177, -1.48685, 5.76948, 3.71835, 4.51305, 6.14146, 0.564278, 5.78248, -2.03832 )
+[connection signal="body_entered" from="." to="." method="_on_Player_Bullet_body_entered"]

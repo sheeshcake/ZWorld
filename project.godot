@@ -19,6 +19,10 @@ config/name="RPG Protoype_v1.0(Underdevelopment)"
 run/main_scene="res://Main.tscn"
 config/icon="res://icon.png"
 
+[debug]
+
+settings/stdout/print_fps=true
+
 [input]
 
 right={
